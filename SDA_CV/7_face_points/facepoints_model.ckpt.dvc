@@ -1,0 +1,5 @@
+outs:
+- md5: d1683cb4878f9a215bc462433fbd0e8a
+  size: 75835390
+  hash: md5
+  path: facepoints_model.ckpt
