@@ -1,0 +1,5 @@
+outs:
+- md5: 17130577b9d0a46499c01bac32de2753
+  size: 8227488
+  hash: md5
+  path: public_tests.zip
