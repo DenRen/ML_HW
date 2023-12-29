@@ -1,0 +1,5 @@
+outs:
+- md5: deafc2bcb07b0dc7f99a108f2eeaf8af
+  size: 61921674
+  hash: md5
+  path: birds_model.ckpt
