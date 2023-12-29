@@ -1,0 +1,5 @@
+outs:
+- md5: dd776f1e7150b68b84696553901ac436
+  size: 34610240
+  hash: md5
+  path: simple_model_with_synt.pth

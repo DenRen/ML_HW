@@ -1,0 +1,7 @@
+/public_tests.zip
+/simple_model.pth
+/epoch=13-val_acc=0.972.ckpt
+/improved_features_model.pth
+/knn_model.bin
+/additonal_files.zip
+/simple_model_with_synt.pth

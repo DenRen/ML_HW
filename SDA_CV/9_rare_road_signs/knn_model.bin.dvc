@@ -1,0 +1,5 @@
+outs:
+- md5: 9697273037de8463ac13e76aa3c5c66a
+  size: 16828706
+  hash: md5
+  path: knn_model.bin
