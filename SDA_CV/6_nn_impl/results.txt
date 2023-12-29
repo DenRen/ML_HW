@@ -1,0 +1,328 @@
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (8, 32, 32)          | params:              608
+                ReLU | input: (8, 32, 32)          output: (8, 32, 32)          | params:                0
+              Conv2D | input: (8, 32, 32)          output: (16, 32, 32)         | params:            1,168
+                ReLU | input: (16, 32, 32)         output: (16, 32, 32)         | params:                0
+             Flatten | input: (16, 32, 32)         output: (16384,)             | params:                0
+               Dense | input: (16384,)             output: (10,)                | params:          163,850
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              165,626
+Epoch:   1, train loss: 1.674972, train accuracy: 40.39%
+Epoch:   2, train loss: 1.353984, train accuracy: 51.84%
+Epoch:   3, train loss: 1.231031, train accuracy: 56.69%
+Epoch:   4, train loss: 1.117412, train accuracy: 60.83%
+Epoch:   5, train loss: 1.024288, train accuracy: 64.62%
+
+Final test loss: 1.1605898
+Final test accuracy: 59.4600%
+FAILED
+
+========================================= 1 failed in 331.60s (0:05:31) =========================================
+
+
+layers = [
+        Conv2D(6, 5, input_shape),
+        ReLU(),
+        Pooling2D(2),
+
+        Conv2D(16, 5, input_shape),
+        ReLU(),
+        Pooling2D(2),
+
+        Flatten(),
+
+        Dense(150),
+        ReLU(),
+        Dense(128),
+        ReLU(),
+        
+        Dense(10),
+        Softmax()
+    ]
+                   Total | total parameters:              177,240
+Epoch:   1, train loss: 1.746089, train accuracy: 36.39%
+Epoch:   2, train loss: 1.493410, train accuracy: 46.45%
+Epoch:   3, train loss: 1.414083, train accuracy: 50.10%
+Epoch:   4, train loss: 1.370579, train accuracy: 51.59%
+Epoch:   5, train loss: 1.329635, train accuracy: 53.65%
+
+Final test loss: 1.4134209
+Final test accuracy: 52.6400% 
+================================================= 1 failed in 263.80s (0:04:23) =================================================
+
+
+bs=16
+    layers = [
+        Conv2D( 8, 5, input_shape), ReLU(),
+        Conv2D(16, 3), ReLU(),
+
+        Flatten(),
+
+        Dense(10),
+        Softmax()
+    ]
+
+               Total | total parameters:              165,626
+Epoch:   1, train loss: 1.674972, train accuracy: 40.39%, validation loss: 1.531648, validation accuracy: 47.52%
+Epoch:   2, train loss: 1.353984, train accuracy: 51.84%, validation loss: 1.300915, validation accuracy: 53.50%
+Epoch:   3, train loss: 1.231031, train accuracy: 56.69%, validation loss: 1.229625, validation accuracy: 56.89%
+Epoch:   4, train loss: 1.117412, train accuracy: 60.83%, validation loss: 1.216715, validation accuracy: 56.92%
+Epoch:   5, train loss: 1.024288, train accuracy: 64.62%, validation loss: 1.164461, validation accuracy: 59.45%
+Epoch:   6, train loss: 0.941568, train accuracy: 67.28%, validation loss: 1.147073, validation accuracy: 60.29%
+Epoch:   7, train loss: 0.859508, train accuracy: 70.23%, validation loss: 1.161734, validation accuracy: 60.54%
+Epoch:   8, train loss: 0.787775, train accuracy: 72.67%, validation loss: 1.210936, validation accuracy: 60.26%
+Epoch:   9, train loss: 0.712282, train accuracy: 75.28%, validation loss: 1.228246, validation accuracy: 60.08%
+Epoch:  10, train loss: 0.646738, train accuracy: 77.50%, validation loss: 1.321150, validation accuracy: 59.74%
+Epoch:  11, train loss: 0.576341, train accuracy: 79.95%, validation loss: 1.402603, validation accuracy: 59.53%
+Epoch:  12, train loss: 0.512507, train accuracy: 82.16%, validation loss: 1.469941, validation accuracy: 59.42%
+Epoch:  13, train loss: 0.450279, train accuracy: 84.53%, validation loss: 1.636435, validation accuracy: 58.27%
+Epoch:  14, train loss: 0.398346, train accuracy: 86.11%, validation loss: 1.720516, validation accuracy: 58.29%
+Epoch:  15, train loss: 0.347843, train accuracy: 87.87%, validation loss: 1.871476, validation accuracy: 57.18%
+Epoch:  16, train loss: 0.297945, train accuracy: 89.79%, validation loss: 2.052544, validation accuracy: 57.01%
+Epoch:  17, train loss: 0.260435, train accuracy: 91.01%, validation loss: 2.174692, validation accuracy: 56.94%
+Epoch:  18, train loss: 0.220398, train accuracy: 92.52%, validation loss: 2.341051, validation accuracy: 57.06%
+Epoch:  19, train loss: 0.192781, train accuracy: 93.34%, validation loss: 2.525319, validation accuracy: 56.10%
+Epoch:  20, train loss: 0.168792, train accuracy: 94.23%, validation loss: 2.762821, validation accuracy: 56.16%
+
+
+
+bs=16
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (8, 32, 32)          | params:              608
+              Conv2D | input: (8, 32, 32)          output: (16, 32, 32)         | params:            1,168
+                ReLU | input: (16, 32, 32)         output: (16, 32, 32)         | params:                0
+             Flatten | input: (16, 32, 32)         output: (16384,)             | params:                0
+             Dropout | input: (16384,)             output: (16384,)             | params:                0
+               Dense | input: (16384,)             output: (10,)                | params:          163,850
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              165,626
+Epoch:   1, train loss: 1.697266, train accuracy: 39.66%, validation loss: 1.572610, validation accuracy: 46.40%
+Epoch:   2, train loss: 1.365525, train accuracy: 51.51%, validation loss: 1.283083, validation accuracy: 53.88%
+Epoch:   3, train loss: 1.241408, train accuracy: 56.13%, validation loss: 1.207499, validation accuracy: 57.47%
+Epoch:   4, train loss: 1.147739, train accuracy: 59.87%, validation loss: 1.174207, validation accuracy: 58.50%
+Epoch:   5, train loss: 1.062962, train accuracy: 62.95%, validation loss: 1.135407, validation accuracy: 60.30%
+Epoch:   6, train loss: 0.984508, train accuracy: 65.70%, validation loss: 1.170633, validation accuracy: 59.46%
+Epoch:   7, train loss: 0.918995, train accuracy: 68.31%, validation loss: 1.112030, validation accuracy: 61.78%
+Epoch:   8, train loss: 0.855947, train accuracy: 70.18%, validation loss: 1.110723, validation accuracy: 62.29%
+Epoch:   9, train loss: 0.790935, train accuracy: 72.56%, validation loss: 1.175636, validation accuracy: 61.15%
+Epoch:  10, train loss: 0.733537, train accuracy: 74.46%, validation loss: 1.222906, validation accuracy: 59.78%
+Epoch:  11, train loss: 0.678184, train accuracy: 76.44%, validation loss: 1.229959, validation accuracy: 60.90%
+Epoch:  12, train loss: 0.633532, train accuracy: 77.96%, validation loss: 1.280777, validation accuracy: 60.48%
+Epoch:  13, train loss: 0.579406, train accuracy: 79.84%, validation loss: 1.340323, validation accuracy: 60.35%
+Epoch:  14, train loss: 0.535055, train accuracy: 81.19%, validation loss: 1.382776, validation accuracy: 59.49%
+Epoch:  15, train loss: 0.491936, train accuracy: 82.62%, validation loss: 1.473743, validation accuracy: 59.25%
+Epoch:  16, train loss: 0.454996, train accuracy: 83.94%, validation loss: 1.544109, validation accuracy: 59.02%
+Epoch:  17, train loss: 0.428501, train accuracy: 84.78%, validation loss: 1.643804, validation accuracy: 59.16%
+Epoch:  18, train loss: 0.395667, train accuracy: 85.81%, validation loss: 1.724578, validation accuracy: 58.94%
+Epoch:  19, train loss: 0.368785, train accuracy: 86.99%, validation loss: 1.716425, validation accuracy: 58.41%
+
+bs=16
+              Conv2D | input: (3, 32, 32)          output: (10, 32, 32)         | params:              760
+                ReLU | input: (10, 32, 32)         output: (10, 32, 32)         | params:                0
+              Conv2D | input: (10, 32, 32)         output: (18, 32, 32)         | params:            1,638
+                ReLU | input: (18, 32, 32)         output: (18, 32, 32)         | params:                0
+             Flatten | input: (18, 32, 32)         output: (18432,)             | params:                0
+             Dropout | input: (18432,)             output: (18432,)             | params:                0
+               Dense | input: (18432,)             output: (10,)                | params:          184,330
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              186,728
+Epoch:   1, train loss: 1.683517, train accuracy: 39.94%, validation loss: 1.430714, validation accuracy: 49.55%
+Epoch:   2, train loss: 1.356251, train accuracy: 51.78%, validation loss: 1.280401, validation accuracy: 54.55%
+Epoch:   3, train loss: 1.217310, train accuracy: 57.10%, validation loss: 1.186611, validation accuracy: 57.72%
+Epoch:   4, train loss: 1.116245, train accuracy: 60.86%, validation loss: 1.237500, validation accuracy: 56.74%
+Epoch:   5, train loss: 1.033136, train accuracy: 63.90%, validation loss: 1.097081, validation accuracy: 61.51%
+Epoch:   6, train loss: 0.962741, train accuracy: 66.32%, validation loss: 1.103638, validation accuracy: 61.34%
+Epoch:   7, train loss: 0.903516, train accuracy: 68.77%, validation loss: 1.107714, validation accuracy: 61.95%
+Epoch:   8, train loss: 0.850717, train accuracy: 70.43%, validation loss: 1.121664, validation accuracy: 61.51%
+Epoch:   9, train loss: 0.801113, train accuracy: 71.89%, validation loss: 1.097287, validation accuracy: 62.53%
+Epoch:  10, train loss: 0.752843, train accuracy: 73.88%, validation loss: 1.149323, validation accuracy: 61.28%
+Epoch:  11, train loss: 0.706704, train accuracy: 75.53%, validation loss: 1.137129, validation accuracy: 62.78%
+Epoch:  12, train loss: 0.669100, train accuracy: 76.67%, validation loss: 1.232972, validation accuracy: 60.98%
+Epoch:  13, train loss: 0.631449, train accuracy: 77.67%, validation loss: 1.221935, validation accuracy: 61.82%
+Epoch:  14, train loss: 0.595278, train accuracy: 79.02%, validation loss: 1.285035, validation accuracy: 61.38%
+Epoch:  15, train loss: 0.565002, train accuracy: 79.81%, validation loss: 1.290148, validation accuracy: 61.62%
+Epoch:  16, train loss: 0.536408, train accuracy: 80.92%, validation loss: 1.290038, validation accuracy: 62.14%
+
+
+bs=16
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (10, 32, 32)         | params:              760
+                ReLU | input: (10, 32, 32)         output: (10, 32, 32)         | params:                0
+           BatchNorm | input: (10, 32, 32)         output: (10, 32, 32)         | params:               20
+              Conv2D | input: (10, 32, 32)         output: (18, 32, 32)         | params:            1,638
+                ReLU | input: (18, 32, 32)         output: (18, 32, 32)         | params:                0
+           BatchNorm | input: (18, 32, 32)         output: (18, 32, 32)         | params:               36
+             Flatten | input: (18, 32, 32)         output: (18432,)             | params:                0
+               Dense | input: (18432,)             output: (10,)                | params:          184,330
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              186,784
+Epoch:   1, train loss: 1.630122, train accuracy: 48.10%, validation loss: 1.224917, validation accuracy: 56.28%
+Epoch:   2, train loss: 1.152711, train accuracy: 59.26%, validation loss: 1.122168, validation accuracy: 60.64%
+Epoch:   3, train loss: 1.025032, train accuracy: 64.46%, validation loss: 1.130443, validation accuracy: 60.58%
+Epoch:   4, train loss: 0.932386, train accuracy: 67.57%, validation loss: 1.082719, validation accuracy: 62.96%
+Epoch:   5, train loss: 0.857540, train accuracy: 69.99%, validation loss: 1.109392, validation accuracy: 62.34%
+Epoch:   6, train loss: 0.781972, train accuracy: 72.77%, validation loss: 1.167390, validation accuracy: 60.90%
+Epoch:   7, train loss: 0.707238, train accuracy: 75.44%, validation loss: 1.189356, validation accuracy: 61.85%
+Epoch:   8, train loss: 0.636072, train accuracy: 77.80%, validation loss: 1.278375, validation accuracy: 61.02%
+Epoch:   9, train loss: 0.569959, train accuracy: 80.08%, validation loss: 1.328299, validation accuracy: 60.39%
+Epoch:  10, train loss: 0.504949, train accuracy: 82.36%, validation loss: 1.507563, validation accuracy: 58.80%
+Epoch:  11, train loss: 0.440403, train accuracy: 84.58%, validation loss: 1.620474, validation accuracy: 57.86%
+Epoch:  12, train loss: 0.383416, train accuracy: 86.60%, validation loss: 1.755656, validation accuracy: 57.44%
+Epoch:  13, train loss: 0.337921, train accuracy: 88.06%, validation loss: 1.955911, validation accuracy: 57.44%
+
+
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (8, 32, 32)          | params:              608
+                ReLU | input: (8, 32, 32)          output: (8, 32, 32)          | params:                0
+           BatchNorm | input: (8, 32, 32)          output: (8, 32, 32)          | params:               16
+              Conv2D | input: (8, 32, 32)          output: (16, 32, 32)         | params:            1,168
+                ReLU | input: (16, 32, 32)         output: (16, 32, 32)         | params:                0
+           BatchNorm | input: (16, 32, 32)         output: (16, 32, 32)         | params:               32
+             Flatten | input: (16, 32, 32)         output: (16384,)             | params:                0
+               Dense | input: (16384,)             output: (10,)                | params:          163,850
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              165,674
+Epoch:   1, train loss: 2.151291, train accuracy: 32.56%, validation loss: 1.704417, validation accuracy: 40.42%
+Epoch:   2, train loss: 1.660862, train accuracy: 43.49%, validation loss: 1.599562, validation accuracy: 44.53%
+Epoch:   3, train loss: 1.517027, train accuracy: 48.41%, validation loss: 1.538143, validation accuracy: 48.17%
+Epoch:   4, train loss: 1.430666, train accuracy: 51.80%, validation loss: 1.492427, validation accuracy: 48.77%
+Epoch:   5, train loss: 1.342234, train accuracy: 54.89%, validation loss: 1.585500, validation accuracy: 46.13%
+Epoch:   6, train loss: 1.278684, train accuracy: 56.97%, validation loss: 1.538634, validation accuracy: 51.47%
+Epoch:   7, train loss: 1.233176, train accuracy: 59.04%, validation loss: 1.770384, validation accuracy: 48.07%
+Epoch:   8, train loss: 1.180912, train accuracy: 60.83%, validation loss: 1.564269, validation accuracy: 48.32%
+Epoch:   9, train loss: 1.145745, train accuracy: 62.09%, validation loss: 1.633929, validation accuracy: 51.50%
+Epoch:  10, train loss: 1.082018, train accuracy: 63.72%, validation loss: 1.774002, validation accuracy: 50.52%
+Epoch:  11, train loss: 1.052823, train accuracy: 65.09%, validation loss: 1.765059, validation accuracy: 50.71%
+Epoch:  12, train loss: 1.021627, train accuracy: 66.30%, validation loss: 1.656005, validation accuracy: 50.12%
+Epoch:  13, train loss: 0.997080, train accuracy: 67.44%, validation loss: 2.308404, validation accuracy: 46.64%
+Epoch:  14, train loss: 0.957368, train accuracy: 68.72%, validation loss: 2.120622, validation accuracy: 49.11%
+Epoch:  15, train loss: 0.937939, train accuracy: 69.70%, validation loss: 2.313513, validation accuracy: 48.86%
+Epoch:  16, train loss: 0.890937, train accuracy: 71.10%, validation loss: 2.334551, validation accuracy: 50.37%
+Epoch:  17, train loss: 0.846756, train accuracy: 72.55%, validation loss: 2.002124, validation accuracy: 50.30%
+Epoch:  18, train loss: 0.861026, train accuracy: 72.89%, validation loss: 2.284596, validation accuracy: 50.47%
+Epoch:  19, train loss: 0.798325, train accuracy: 74.42%, validation loss: 2.682646, validation accuracy: 48.88%
+Epoch:  20, train loss: 0.819372, train accuracy: 74.86%, validation loss: 3.121895, validation accuracy: 49.13%
+Epoch:  21, train loss: 0.785414, train accuracy: 75.87%, validation loss: 3.035447, validation accuracy: 46.91%
+Epoch:  22, train loss: 0.779684, train accuracy: 76.51%, validation loss: 2.694990, validation accuracy: 47.23%
+Epoch:  23, train loss: 0.739017, train accuracy: 77.51%, validation loss: 3.170137, validation accuracy: 47.61%
+Epoch:  24, train loss: 0.742473, train accuracy: 78.19%, validation loss: 3.825308, validation accuracy: 47.93%
+Epoch:  25, train loss: 0.798040, train accuracy: 77.56%, validation loss: 3.718256, validation accuracy: 48.01%
+Epoch:  26, train loss: 0.785878, train accuracy: 78.39%, validation loss: 3.170169, validation accuracy: 46.53%
+Epoch:  27, train loss: 0.791565, train accuracy: 78.73%, validation loss: 3.911399, validation accuracy: 47.56%
+Epoch:  28, train loss: 0.789823, train accuracy: 78.89%, validation loss: 3.701484, validation accuracy: 48.65%
+Epoch:  29, train loss: 0.865208, train accuracy: 78.40%, validation loss: 4.444557, validation accuracy: 48.34%
+Epoch:  30, train loss: 0.830259, train accuracy: 79.33%, validation loss: 3.752199, validation accuracy: 48.85%
+Epoch:  31, train loss: 0.775581, train accuracy: 80.59%, validation loss: 5.525643, validation accuracy: 47.16%
+Epoch:  32, train loss: 0.880555, train accuracy: 79.81%, validation loss: 6.113324, validation accuracy: 46.65%
+Epoch:  33, train loss: 0.940754, train accuracy: 79.31%, validation loss: 5.312246, validation accuracy: 46.86%
+Epoch:  34, train loss: 1.090370, train accuracy: 77.90%, validation loss: 4.932360, validation accuracy: 47.43%
+Epoch:  35, train loss: 1.053074, train accuracy: 78.55%, validation loss: 4.013031, validation accuracy: 46.59%
+Epoch:  36, train loss: 1.127251, train accuracy: 78.81%, validation loss: 5.882908, validation accuracy: 47.70%
+Epoch:  37, train loss: 1.203522, train accuracy: 78.88%, validation loss: 7.649848, validation accuracy: 45.02%
+Epoch:  38, train loss: 1.273034, train accuracy: 78.34%, validation loss: 5.686706, validation accuracy: 45.95%
+Epoch:  39, train loss: 1.147269, train accuracy: 80.29%, validation loss: 5.940810, validation accuracy: 47.39%
+Epoch:  40, train loss: 1.548291, train accuracy: 77.38%, validation loss: 8.681002, validation accuracy: 47.91%
+Epoch:  41, train loss: 1.704599, train accuracy: 76.78%, validation loss: 7.537330, validation accuracy: 46.45%
+Epoch:  42, train loss: 1.628906, train accuracy: 77.62%, validation loss: 8.491729, validation accuracy: 44.46%
+Epoch:  43, train loss: 1.744452, train accuracy: 77.67%, validation loss: 6.342072, validation accuracy: 44.33%
+Epoch:  44, train loss: 1.813970, train accuracy: 78.13%, validation loss: 11.145099, validation accuracy: 46.89%
+Epoch:  45, train loss: 1.915276, train accuracy: 77.86%, validation loss: 8.845979, validation accuracy: 46.38%
+Epoch:  46, train loss: 2.056590, train accuracy: 77.68%, validation loss: 9.708857, validation accuracy: 46.92%
+Epoch:  47, train loss: 2.530101, train accuracy: 76.49%, validation loss: 10.077524, validation accuracy: 47.44%
+Epoch:  48, train loss: 3.117977, train accuracy: 75.05%, validation loss: 12.563582, validation accuracy: 43.39%
+Epoch:  49, train loss: 4.257020, train accuracy: 73.47%, validation loss: 18.035931, validation accuracy: 41.94%
+Epoch:  50, train loss: 21.077173, train accuracy: 39.86%, validation loss: 27.376514, validation accuracy: 23.84%
+
+
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (8, 32, 32)          | params:              224
+                ReLU | input: (8, 32, 32)          output: (8, 32, 32)          | params:                0
+           BatchNorm | input: (8, 32, 32)          output: (8, 32, 32)          | params:               16
+           Pooling2D | input: (8, 32, 32)          output: (8, 16, 16)          | params:                0
+              Conv2D | input: (8, 16, 16)          output: (16, 16, 16)         | params:            1,168
+                ReLU | input: (16, 16, 16)         output: (16, 16, 16)         | params:                0
+           BatchNorm | input: (16, 16, 16)         output: (16, 16, 16)         | params:               32
+              Conv2D | input: (16, 16, 16)         output: (16, 16, 16)         | params:            2,320
+                ReLU | input: (16, 16, 16)         output: (16, 16, 16)         | params:                0
+           BatchNorm | input: (16, 16, 16)         output: (16, 16, 16)         | params:               32
+           Pooling2D | input: (16, 16, 16)         output: (16, 8, 8)           | params:                0
+              Conv2D | input: (16, 8, 8)           output: (32, 8, 8)           | params:            4,640
+                ReLU | input: (32, 8, 8)           output: (32, 8, 8)           | params:                0
+           BatchNorm | input: (32, 8, 8)           output: (32, 8, 8)           | params:               64
+              Conv2D | input: (32, 8, 8)           output: (32, 8, 8)           | params:            9,248
+                ReLU | input: (32, 8, 8)           output: (32, 8, 8)           | params:                0
+           BatchNorm | input: (32, 8, 8)           output: (32, 8, 8)           | params:               64
+           Pooling2D | input: (32, 8, 8)           output: (32, 4, 4)           | params:                0
+             Flatten | input: (32, 4, 4)           output: (512,)               | params:                0
+             Dropout | input: (512,)               output: (512,)               | params:                0
+               Dense | input: (512,)               output: (1024,)              | params:          525,312
+                ReLU | input: (1024,)              output: (1024,)              | params:                0
+               Dense | input: (1024,)              output: (10,)                | params:           10,250
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              553,970
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+C:\Users\denre\miniconda3\envs\HW_CV_6\lib\site-packages\numpy\core\_methods.py:47: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+======================================================================================== no tests ran in 20.06s ======================================================================================== 
+6_nn_impl on main ≡  ?4 ~2 x
+➜
+
+  python .\run.py unittest cifar10
+========================================================================================= test session starts ==========================================================================================
+platform win32 -- Python 3.10.12, pytest-7.4.0, pluggy-1.0.0 -- C:\Users\denre\miniconda3\envs\HW_CV_6\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\denre\Documents\GitHub\ML_HW\SDA_CV\6_nn_impl
+collected 1 item
+
+
+bs = 32
+tests/13_unittest_cifar10_input/test.py::test_main
+              Conv2D | input: (3, 32, 32)          output: (8, 32, 32)          | params:              224
+                ReLU | input: (8, 32, 32)          output: (8, 32, 32)          | params:                0
+           BatchNorm | input: (8, 32, 32)          output: (8, 32, 32)          | params:               16
+              Conv2D | input: (8, 32, 32)          output: (8, 32, 32)          | params:              584
+                ReLU | input: (8, 32, 32)          output: (8, 32, 32)          | params:                0
+           BatchNorm | input: (8, 32, 32)          output: (8, 32, 32)          | params:               16
+           Pooling2D | input: (8, 32, 32)          output: (8, 16, 16)          | params:                0
+              Conv2D | input: (8, 16, 16)          output: (16, 16, 16)         | params:            1,168
+                ReLU | input: (16, 16, 16)         output: (16, 16, 16)         | params:                0
+           BatchNorm | input: (16, 16, 16)         output: (16, 16, 16)         | params:               32
+              Conv2D | input: (16, 16, 16)         output: (16, 16, 16)         | params:            2,320
+                ReLU | input: (16, 16, 16)         output: (16, 16, 16)         | params:                0
+           BatchNorm | input: (16, 16, 16)         output: (16, 16, 16)         | params:               32
+           Pooling2D | input: (16, 16, 16)         output: (16, 8, 8)           | params:                0
+              Conv2D | input: (16, 8, 8)           output: (32, 8, 8)           | params:            4,640
+                ReLU | input: (32, 8, 8)           output: (32, 8, 8)           | params:                0
+           BatchNorm | input: (32, 8, 8)           output: (32, 8, 8)           | params:               64
+              Conv2D | input: (32, 8, 8)           output: (32, 8, 8)           | params:            9,248
+                ReLU | input: (32, 8, 8)           output: (32, 8, 8)           | params:                0
+           BatchNorm | input: (32, 8, 8)           output: (32, 8, 8)           | params:               64
+           Pooling2D | input: (32, 8, 8)           output: (32, 4, 4)           | params:                0
+             Flatten | input: (32, 4, 4)           output: (512,)               | params:                0
+             Dropout | input: (512,)               output: (512,)               | params:                0
+               Dense | input: (512,)               output: (1024,)              | params:          525,312
+                ReLU | input: (1024,)              output: (1024,)              | params:                0
+               Dense | input: (1024,)              output: (10,)                | params:           10,250
+             Softmax | input: (10,)                output: (10,)                | params:                0
+----------------------------------------------------------------------------------------------------------
+               Total | total parameters:              553,970
+Epoch:   1, train loss: 1.657270, train accuracy: 40.96%, validation loss: 1.332713, validation accuracy: 51.54%
+Epoch:   2, train loss: 1.272895, train accuracy: 54.25%, validation loss: 1.139438, validation accuracy: 59.23%
+Epoch:   3, train loss: 1.072484, train accuracy: 61.70%, validation loss: 0.987033, validation accuracy: 64.84%
+Epoch:   4, train loss: 0.950144, train accuracy: 66.44%, validation loss: 0.916052, validation accuracy: 67.16%
+Epoch:   5, train loss: 0.848471, train accuracy: 70.29%, validation loss: 0.873471, validation accuracy: 69.09%
+Epoch:   6, train loss: 0.772513, train accuracy: 72.91%, validation loss: 0.863356, validation accuracy: 69.99%
+Epoch:   7, train loss: 0.710514, train accuracy: 75.18%, validation loss: 0.797185, validation accuracy: 72.26%
+Epoch:   8, train loss: 0.649012, train accuracy: 77.28%, validation loss: 0.788910, validation accuracy: 72.42%
+Epoch:   9, train loss: 0.585010, train accuracy: 79.48%, validation loss: 0.824285, validation accuracy: 71.37%
+Epoch:  10, train loss: 0.549469, train accuracy: 80.62%, validation loss: 0.776993, validation accuracy: 73.44%
+
+======================= (0:24:57)
